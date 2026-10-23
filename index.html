@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+        const displayDetails = true; /* implement html button switch */
+        
+        function createDetailsSpanInsideHeader() {
+            const headerDesc = document.getElementById("details-container");
+            const qwertz = document.createElement("span"); /* only backticks can allow multiline strings apparently */
+            qwertz.textContent = `Angehender Applikationsentwickler mit Interesse an
+                                        Webentwicklung, Softwaredesign, Datenbanktechnologie
+                                        und vielem weiterem. Motiviert, neue Techn ...`;
+            headerDesc.appendChild(qwertz);
+        }
+
+        function moveDetailsListIntoHeader() {
+            const detailsContainer = document.querySelector(
+                "#container2 > div:nth-of-type(4)");
+            const lastListElement = detailsContainer?.querySelectorAll(":scope > ul")[2];
+            const headerDesc = document.getElementById("details-container");
+            headerDesc.appendChild(lastListElement);
+        }
+
+        if (displayDetails) {
+            document.addEventListener("DOMContentLoaded", moveDetailsListIntoHeader);
+        } else {
+            document.addEventListener("DOMContentLoaded", createDetailsSpanInsideHeader);
+        }
+    </script>
+    <title> Lebenslauf Jarno P. Applikation Entwicklung </title>
+</head>
+<body>
+    <div id="container1">
+        <h1> Jarno P. Lebenslauf September </h1>
+        <img src="assets/instagram.jpg" alt="pfanderjarno">
+        <div id="details-container"></div>
+    </div>
+    <div id="container2">
+        <div id="education">
+            <h2> Bildung </h2>
+            <div class="rail">
+                <h3> Berufsschule Lorraine BE </h3>
+                <p> August 2023 bis Juli 2025 </p>
+                <p> August 2027 bis Juli 2029 </p>
+            </div>
+            <div>
+                <h3> Emmental Oberstufe (Sekundarschule) </h3>
+                <p> August 2020 bis Juli 2023 </p>
+            </div>
+            <div>
+                <h3> Schnupperlehren </h3>
+                <ul>
+                    <h4> Geomatik </h4>
+                    <li> Juni 2022 </li>
+                </ul>
+                <ul>
+                    <h4> Logistik </h4>
+                    <li> Oktober 2022 </li>
+                </ul>
+                <ul>
+                    <h4> Mediamatik </h4>
+                    <li> Februar 2023 </li>
+                </ul>
+            </div>
+        </div>
+        <div id="experience-employment">
+            <h2> Berufserfahrung </h2>
+            <ul>
+                <li>
+                    <p class="raile">
+                        it5solutions bienne gautschi
+                    </p>
+                    <img src="assets/bienne.png" alt="it5solutions">
+                </li>
+                <li>
+                    <img src="assets/basislehrjahr.png" alt="ICT B CH">
+                    <p class="raile">
+                        ICT Berufsbildung Schweiz
+                    </p>
+                </li>
+                <li>
+                    <p class="raile">
+                        buempliz stiftung autismus
+                    </p>
+                    <img src="assets/bodenweid.png" alt="RafisaGmbH">
+                </li>
+            </ul>
+        </div>
+        <div id="plaintext">
+            <h2> Fliess Text </h2>
+            <span> In folgenden fünf Modulen erarbeitete
+                ich folgende Handlungskompetenzen der Informatik
+                (welche ich teilweise &nbsp;&nbsp;in meiner
+                Gewerbschule&nbsp;&nbsp; doppelt gelernt hatte). <ul>
+                <li>(Einstieg Python Programmierwelt)</li>
+                <li>Betriebssysteme</li>
+                <li>Telematik Grundlagen</li>
+                <li>Webdesign</li>
+                <li>IoT Grundlagen</li>
+                <li>Mobile App Development</li>
+                <li>(einige Monate diverser Projekt<!--
+                -->arbeiten einschliesslich Backend & Frontend)
+                </li></ul></span>
+        </div>
+        <div>                                       
+            <ul id="skills-1" class="layout-a">         <!--
+            <ul id="skills-1" class="layout-b">             -->
+                                        <!-- use Ctrl/Mouse + Shift +
+                                                Alt for select vertically -->
+                <li> <h3> Kenntnisse </h3> </li>
+                <li> Spreachkenntnisse Deutsch: Mündliche Interaktionskompetenz </li>
+                <li> Spreachkenntnisse Englisch: Rezeptives Hörverständnis </li>
+                <li> Spreachkenntnisse Französisch: Rezeptives Leseverständnis </li>
+                <li> <p> qwertz </p> </li>
+            </ul>                                   
+            <ul id="skills-2" class="layout-a">         <!--
+            <ul id="skills-2" class="layout-b">             -->
+                <li> <h3> Interessen </h3> </li>
+                <li> Geographie </li>
+                <li> abcdef </li>
+                <li> Umgang Microsoft Office Produkte </li>
+            </ul>
+            <ul>
+                <li> <h3> Persoenliche Angaben </h3> </li>
+                <li> +41 79 622 23 41 </li>
+                <li> pfanderjarno@gmail.com </li> <!--
+                <li class="horizontaler-link">
+                    <p> Mein Linked In Konto: </p>
+                    <a href="https://www.linkedin.com/in/john-smith-2a1ba6258">Linked In Jarno P. </a>
+                </li>
+                <li> 01. April 2008 </li> -->
+                <li> Selhofen 31, 3124 Kehrsatz </li>
+            </ul>
+        </div>    
+    </div>
+</body>
+</html>
